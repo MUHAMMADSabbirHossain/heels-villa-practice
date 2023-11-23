@@ -29,7 +29,9 @@ const Cart = ({ cart, products, handleClearCart }) => {
       <div className='cart-header'>
         <h1>Order Summery</h1>
         <button
-          onClick={() => handleClearCart()}
+          onClick={() => handleClearCart(
+            setFreeProduct({})
+          )}
           className='remove-button'
           title='Clear Cart'
         >

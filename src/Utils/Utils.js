@@ -2,13 +2,13 @@ const getFromLocalStorage = () => {
     return JSON.parse(localStorage.getItem("shopping_cart"));
 };
 
-console.log(getFromLocalStorage());
+// console.log(getFromLocalStorage());
 
 const addToLocalStorage = (id) => {
-    console.log("Added to local storage.");
+    // console.log("Added to local storage.");
 
     const exist = getFromLocalStorage();
-    console.log(exist);
+    // console.log(exist);
     let shoppingCart = {};
 
     if (!exist) {

@@ -22,7 +22,7 @@ const Shop = () => {
       const previousCart = [];
       // console.log(storedProducts);
       for (const id in storedProductsIds) {
-        console.log(id);
+        // console.log(id);
         const foundProduct = products.find((product) => product.id === id);
         // console.log(foundProduct);
         if (foundProduct) {
@@ -36,17 +36,17 @@ const Shop = () => {
   }, [products]);
 
   const handleAddToCart = (selectedProduct) => {
-    // console.log("Add to cart");
+    // console.log("Add to cart", selectedProduct);
     let newCart = [];
-    const exist = cart.find(product => product.id == selectedProduct.id);
+    const exist = cart.find(product => product.id === selectedProduct.id);
 
     if (!exist) {
       selectedProduct.quantity = 1;
-      newCart = [...cart, selectedProduct];
+      newCart = [selectedProduct, ...cart,];
     } else {
       const rest = cart.filter(product => product.id !== selectedProduct.id);
       selectedProduct.quantity = selectedProduct.quantity + 1;
-      newCart = [...rest, selectedProduct];
+      newCart = [selectedProduct, ...rest,];
     }
     addToLocalStorage(selectedProduct.id);
     setCart(newCart);

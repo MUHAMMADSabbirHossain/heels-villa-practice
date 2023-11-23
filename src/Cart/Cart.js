@@ -29,7 +29,7 @@ const Cart = ({ cart, products, handleClearCart }) => {
       <div className='cart-header'>
         <h1>Order Summery</h1>
         <button
-          onClick={handleClearCart}
+          onClick={() => handleClearCart()}
           className='remove-button'
           title='Clear Cart'
         >
@@ -37,7 +37,9 @@ const Cart = ({ cart, products, handleClearCart }) => {
         </button>
       </div>
       {cart.map((product, index) => (
-        <div key={index} className='cart-item'>
+        <div
+          key={index}
+          className='cart-item'>
           <img src={product.pairImage} alt='' />
           <div>
             <p>

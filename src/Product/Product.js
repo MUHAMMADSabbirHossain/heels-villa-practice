@@ -4,7 +4,7 @@ import { BsCartPlus } from "react-icons/bs";
 
 const Product = ({ product, handleAddToCart }) => {
   const [flipImage, setFlipImage] = useState(false);
-  console.log(flipImage);
+  // console.log(flipImage);
   const { name, pairImage, color, price, sideImage } = product;
   return (
     <div
